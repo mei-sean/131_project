@@ -13,24 +13,24 @@ def home():
     posts = Post.query.all()
     return render_template("home.html", user=current_user, posts=posts)
 
-
 @views.route("/create-post", methods=['GET', 'POST'])
 @login_required
 def create_post():
     if request.method == "POST":
         text = request.form.get('text')
+        class_id = request.form.get('class_id')
+        print(class_id)
 
         if not text:
             flash('Post cannot be empty', category='error')
         else:
-            post = Post(text=text, author=current_user.id)
+            post = Post(text=text, author=current_user.id, class_id=class_id)
             db.session.add(post)
             db.session.commit()
             flash('Post created!', category='success')
             return redirect(url_for('views.home'))
 
     return render_template('create_post.html', user=current_user)
-
 
 @views.route("/delete-post/<id>")
 @login_required
@@ -96,3 +96,4 @@ def delete_comment(comment_id):
         db.session.commit()
 
     return redirect(url_for('views.home'))
+

@@ -3,8 +3,17 @@
 {% block content
     %}
     <h1 align="center">Make Post</h1>
-    
+
     <form method="POST">
+      <div align="center">
+        <select name="class_id" id="class_id">
+          <option class_id="cmpe50">cmpe50</option>
+          <option class_id="cmpe110">cmpe110</option>
+          <option class_id="cmpe126">cmpe126</option>
+          </select>
+        </div>
+        <br/>
+
       <textarea name="text" id="text" class="form-control"></textarea>
       <br />
       <div align="center">
@@ -17,4 +26,7 @@
         ><button type="button" class="btn btn-lg btn-secondary">Back</button></a
       >
     </div>
+
+
     {% endblock %}
+    

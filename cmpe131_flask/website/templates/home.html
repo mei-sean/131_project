@@ -1,2 +1,62 @@
-{% extends "posts_div.html" %} 
+{% extends "base.html" %} 
 {% block title %}Home{% endblock %}
+{% block content %}
+</br>
+<h1 align="center">{% block header %}CMPE Survival Guide{% endblock %}</h1>
+</br>
+<body>
+    <div class="background-image"></div>
+</body>
+<style>
+    
+</style>
+<div class="card">
+    <h5 class="card-header">CMPE50</h5>
+    <div class="card-body">
+        <h5 class="card-title">Object Oriented Concepts and Methodology</h5>
+        <p class="card-text">Application of object-oriented software engineering techniques 
+          to the design and development of larger programs; 
+          data abstraction, structures, classes and associated algorithms.
+        </p>
+        <a href="/cmpe50">
+            <button type="button" class="btn btn-info btn-lg">
+                CMPE50
+            </button>
+        </a>
+    </div>
+</div>
+<br/>
+<div class="card">
+    <h5 class="card-header">CMPE 110</h5>
+    <div class="card-body">
+        <h5 class="card-title">Electronics for Computing Systems</h5>
+        <p class="card-text">RC, RL and RLC circuit analysis, diodes and diode circuits, 
+            MOSFET and bipolar transistor I-V characteristics and circuits, 
+            CMOS logic circuits, CMOS-TTL interface, sensors and signal conditioning circuits 
+            using operational amplifiers, A/D and D/A converters, electromechanical device control.
+        </p>
+        <a href="/cmpe110">
+            <button type="button" class="btn btn-info btn-lg">
+                CMPE110
+            </button>
+        </a>
+    </div>
+</div>
+<br/>
+<div class="card">
+    <h5 class="card-header">CMPE 126</h5>
+    <div class="card-body">
+        <h5 class="card-title">Algorithms and Data Structure Design</h5>
+        <p class="card-text">Object-oriented data organization and representation as strings, arrays, stacks, queues, dequeues, 
+            lists, sets, trees, tables, and graphs. Sorting and searching and algorithm 
+            design and performance analysis.
+        </p>
+        <a href="/cmpe126">
+            <button type="button" class="btn btn-info btn-lg">
+                CMPE126
+            </button>
+        </a>
+    </div>
+</div>
+
+{% endblock %}
