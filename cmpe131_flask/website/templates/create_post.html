@@ -28,12 +28,24 @@
       <label>Who was your professor? </label>
       <textarea name="prof" id="prof" class="form-control"></textarea>
       <br />      
-      <label>Tell us about the class: </label>
+      <label>Tell us about the professors teaching style: </label>
       <textarea name="text" id="text" class="form-control"></textarea>
       <br />
-      <label>Tips for the class: </label>
+      <label>Tips to succeed: </label>
       <textarea name="tips" id="tips" class="form-control"></textarea>
       <br />
+      <label>Course Material Difficulty: </label>
+      <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="btn-group mr-2" role="group" aria-label="First group">
+        <div difficulty=""></div>
+          <button type="button" difficulty = "Very Easy" class="btn btn-success">Cake (Very Easy)</button>
+          <button type="button" difficulty = "Easy" class="btn btn-dark">Lightweight (Easy)</button>
+          <button type="button" difficulty = "Average" class="btn btn-info">Mid (Average)</button>
+          <button type="button" difficulty = "Hard" class="btn btn-warning">Heavyweight (Hard)</button>
+          <button type="button" difficulty = "Very Hard" class="btn btn-danger">9to5 (Very Hard)</button>
+        </div>
+      </div>
+      <br/>
       <div align="center">
         <button type="submit" class="btn btn-lg btn-primary">Post</button>
       </div>

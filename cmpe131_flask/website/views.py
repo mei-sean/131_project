@@ -18,13 +18,18 @@ def home():
 def create_post():
     if request.method == "POST":
         text = request.form.get('text')
+        prof = request.form.get('prof')
+        tips = request.form.get('tips')
         class_id = request.form.get('class_id')
         print(class_id)
-
-        if not text:
-            flash('Post cannot be empty', category='error')
+        if not prof:
+            flash('Professor name cannot be NULL', category='error')
+        elif not text:
+            flash('Text box cannot be empty', category='error')
+        elif not tips:
+            flash('Tips box cannot be empty', category='error')
         else:
-            post = Post(text=text, author=current_user.id, class_id=class_id)
+            post = Post(text=text, author=current_user.id, class_id=class_id, prof=prof, tips=tips)
             db.session.add(post)
             db.session.commit()
             flash('Post created!', category='success')

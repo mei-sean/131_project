@@ -22,7 +22,12 @@
           {% endif %}
         </div>
         <div class="card-body">
+          <h3 class="text-primary"><strong>{{post.prof}}</strong></h3>
+          <label><i><small>Class Experience:</small></i></label>
           <div class="card-text">{{post.text}}</div>
+          <br />
+          <label><i><small>Tips for this Class:</small></i></label>
+          <div class="card-text">{{post.tips}}</div>
           <br />
           <div class="collapse" id="comments-{{post.id}}">
             <div class="card">
