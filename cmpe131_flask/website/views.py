@@ -49,19 +49,6 @@ def delete_post(id):
     return redirect(url_for('views.home'))
 
 
-@views.route("/posts/<username>")
-@login_required
-def posts(username):
-    user = User.query.filter_by(username=username).first()
-
-    if not user:
-        flash('No user with that username exists', category='error')
-        return redirect(url_for('views.home'))
-
-    posts = user.posts
-    return render_template("posts.html", user=current_user, posts=posts, username=username)
-
-
 @views.route("/create-comment/<post_id>", methods=['POST'])
 @login_required
 def create_comment(post_id):
@@ -97,3 +84,13 @@ def delete_comment(comment_id):
 
     return redirect(url_for('views.home'))
 
+@views.route("/posts/<class_id>")
+@login_required
+def posts(class_id):
+    posts = Post.query.filter_by(class_id=class_id).all()
+
+    if not posts:
+        flash('No posts for this class', category='error')
+        return redirect(url_for('views.home'))
+        
+    return render_template("posts.html", user=current_user, posts=posts, class_id=class_id)
